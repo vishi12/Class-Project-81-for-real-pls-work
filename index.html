@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Class 81</title>
+        <script src="main.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body class="body_style">
+      <center>
+        <h1>My First Canvas In Text Coding</h1>
+        <canvas id="my_first_canvas" width="800" height="600">
+        </canvas>
+      </center>
+    </body>
+    <script>
+      canvas = document.getElementById("my_first_canvas");
+      ctx = canvas.getContext("2d");
+      color = "blue";
+      ctx.beginPath();
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 3;
+      ctx.arc(400, 300, 180, 0, 2*Math.PI);
+      ctx.stroke();
+      
+      canvas.addEventListener("mousedown", my_mouse_down);
+      function my_mouse_down(e) {
+        color = document>getElementById("color").value;
+        console.log(color);
+        mouse_x = e.clientX-canvas.offsetLeft;
+        mouse_y = e.clientY-canvas.offsetTop;
+        circle(mouse_x, mouse_y);
+        ctx.beginPath();
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 3;
+        ctx.arc(mouse_x, mouse_y, 40, 0, 2*Math.PI);
+        ctx.stroke();
+
+}
+    </script>
+</html>
